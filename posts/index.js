@@ -7,12 +7,12 @@ app.use(bodyParser.json());
 
 const posts = {};
 
-// Update the route to '/posts'
+// Create a GET route to '/posts'
 app.get("/posts", (req, res) => {
   res.send(posts);
 });
 
-// Update the POST route to '/posts'
+// Create a POST route to '/posts'
 app.post("/posts", (req, res) => {
   const id = crypto.randomBytes(4).toString("hex");
   const { title } = req.body;
