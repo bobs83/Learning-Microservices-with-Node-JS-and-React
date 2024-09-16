@@ -26,7 +26,7 @@ app.post("/posts", async (req, res) => {
   };
 
   await axios
-    .post("http://localhost:3005/events", {
+    .post("http://localhost:4005/events", {
       type: "PostCreated",
       data: {
         id,
@@ -46,6 +46,6 @@ app.post("/events", (req, res) => {
   res.send({});
 });
 
-app.listen(3000, () => {
-  console.log("Listening on port 3000");
+app.listen(4000, () => {
+  console.log("Listening on port 4000");
 });

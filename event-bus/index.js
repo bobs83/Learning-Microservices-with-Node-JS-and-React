@@ -9,26 +9,26 @@ app.post("/events", async (req, res) => {
   const event = req.body;
 
   try {
-    await axios.post("http://localhost:3000/events", event);
+    await axios.post("http://localhost:4000/events", event);
   } catch (err) {
-    console.error("Error posting to service on port 3000:", err.message);
+    console.error("Error posting to service on port 4000:", err.message);
   }
 
   try {
-    await axios.post("http://localhost:3001/events", event);
+    await axios.post("http://localhost:4001/events", event);
   } catch (err) {
-    console.error("Error posting to service on port 3001:", err.message);
+    console.error("Error posting to service on port 4001:", err.message);
   }
 
   try {
-    await axios.post("http://localhost:3002/events", event);
+    await axios.post("http://localhost:4002/events", event);
   } catch (err) {
-    console.error("Error posting to service on port 3002:", err.message);
+    console.error("Error posting to service on port 4002:", err.message);
   }
 
   res.send({ status: "OK" });
 });
 
-app.listen(3005, () => {
-  console.log("Listening on 3005");
+app.listen(4005, () => {
+  console.log("Listening on 4005");
 });
